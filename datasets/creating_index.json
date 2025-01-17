@@ -1,0 +1,22 @@
+PUT /faq_embeddings_index
+{
+  "settings": {
+    "index": {
+      "vector": true
+    }
+  },
+  "mappings": {
+    "properties": {
+      "category": { "type": "text" },
+      "question": { "type": "text" },
+      "answer": { "type": "text" },
+      "question_embedding": {
+        "type": "vector",
+        "dimension": 384, 
+        "indexing": true,
+        "algorithm": "GRAPH",
+        "metric": "euclidean"
+      }
+    }
+  }
+}
